@@ -1,3 +1,6 @@
+//SalimAriantou
+//03081220039
+
 public class Salim {
     public static void main(String[] args) {
         String nama = "PUAN PRESIDEN !!!!!!!!!!!!!!!!!!";
