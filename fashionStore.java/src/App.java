@@ -18,6 +18,7 @@ public class App {
                     System.out.print("Enter your choice: ");
                     
                     choice = scanner.nextInt();
+                    // Masih sementara, belum hasil akhir
                     
                     switch (choice) {
                         case 1:
@@ -30,7 +31,7 @@ public class App {
                             System.out.println("You selected Option 3");
                             break;
                         case 4:
-                            System.out.println("Exiting the program...");
+                            System.out.println("You selected");
                             break;
                         case  5:
                             System.out.println("You Selected.");
