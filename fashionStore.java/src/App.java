@@ -44,11 +44,5 @@ public class App {
         
     //aku buat class costumer - davin
     //order-Justin
-<<<<<<< Updated upstream
-    // karyawan-salim
-=======
-    //karyawan - salim
-    //
->>>>>>> Stashed changes
 
     
