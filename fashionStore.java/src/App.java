@@ -8,8 +8,8 @@ public class App {
                 int choice;
         
                 do {
-                    System.out.println("==== Menu ====");
-                    System.out.println("1. Option 1");
+                    System.out.println("==== Angkasa Fashion Store ====");
+                    System.out.println("1. Tambah Produk");
                     System.out.println("2. Option 2");
                     System.out.println("3. Option 3");
                     System.out.println("4. Exit");
