@@ -7,7 +7,7 @@ public class karyawan {
      * Jabatan : untuk menginput jabatan atau posisi karyawan
      * Departemen : berisi didepartemen dimana karyawan bekerja
      * Gaji : untuk menginput gaji / penghasilan karyawan
-     * No Tlp : untuk menginput nomor telepon karyawan
+     * NomorTelepon : untuk menginput nomor telepon karyawan
      */
 
     
