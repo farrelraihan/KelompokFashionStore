@@ -4,7 +4,7 @@ package model;
  */
 public class Produk {
     // Attributes :
-    /*
+    /* ID Produk : 
      * Merk : 
      * Nama : 
      * Kategori : 
