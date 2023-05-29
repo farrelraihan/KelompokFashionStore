@@ -10,9 +10,11 @@ public class App {
                 do {
                     System.out.println("==== Angkasa Fashion Store ====");
                     System.out.println("1. Tambah Produk");
-                    System.out.println("2. Option 2");
-                    System.out.println("3. Option 3");
-                    System.out.println("4. Exit");
+                    System.out.println("2. Tambah Data Customer");
+                    System.out.println("3. Tambah Data Sales");
+                    System.out.println("4. Cek Inventori");
+                    System.out.println("5. Update Data Karyawan");
+                    System.out.println("6. Cek Sales");
                     System.out.print("Enter your choice: ");
                     
                     choice = scanner.nextInt();
@@ -29,6 +31,9 @@ public class App {
                             break;
                         case 4:
                             System.out.println("Exiting the program...");
+                            break;
+                        case  5:
+                            System.out.println("You Selected.");
                             break;
                         default:
                             System.out.println("Invalid choice. Please try again.");
