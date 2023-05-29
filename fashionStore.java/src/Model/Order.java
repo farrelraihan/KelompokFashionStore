@@ -11,5 +11,6 @@ public class Order {
      * Tanggal Pesanan : Tanggal ketika pesanan di pesan pelanggan
      * Harga           : Harga dari produk yang di pesan
      * Jumlah          : Jumlah produk yang dipesan 
+     * Id pembayaran   : Id pemabayaran dari suatru produk
      */
 }
