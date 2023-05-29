@@ -31,10 +31,10 @@ public class App {
                             System.out.println("You selected Option 3");
                             break;
                         case 4:
-                            System.out.println("You selected");
+                            System.out.println("You selected Option 4");
                             break;
                         case  5:
-                            System.out.println("You Selected.");
+                            System.out.println("You Selected Option 5");
                             break;
                         default:
                             System.out.println("Invalid choice. Please try again.");
