@@ -2,7 +2,7 @@ package model;
 /*
  * Name : Owen
  */
-public class Pembayaran {
+public class Settlement {
     /*
      * Transaction ID : Transaksi Pembayaran
      * Method : Metode Pembayaran
