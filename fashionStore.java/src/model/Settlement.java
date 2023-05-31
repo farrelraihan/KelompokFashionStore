@@ -2,6 +2,7 @@ package model;
 
 /*
  * Name : Owen
+ * NIM : 03081220045
  */
 public class Settlement {
     /*
