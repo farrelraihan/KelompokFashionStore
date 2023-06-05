@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import model.Produk;
+import model.Costumer;
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
@@ -50,7 +51,7 @@ public class App {
 
             public static void init(){
                 Produk Sepatu = new Produk("Adidas", "Ultraboost", "69BCA20", "Sepatu", 870000, 52, "White", "44");
-                
+                Costumer Salim = new Costumer("Salim", "082160548923", "salim.ariantou@gmail.com", "Jl. Brahrang");
             }
         }
         
