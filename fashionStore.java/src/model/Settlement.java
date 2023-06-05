@@ -20,6 +20,9 @@ public class Settlement {
     Integer waktuSettlement;
     String status;
 
+    public Settlement() {
+    }
+
     public Settlement(String idTransaksi, String metode, Integer tanggalSettlement, Integer waktuSettlement, String status) {
         this.idTransaksi = idTransaksi;
         this.metode = metode;
