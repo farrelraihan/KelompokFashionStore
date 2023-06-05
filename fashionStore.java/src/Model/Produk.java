@@ -30,6 +30,12 @@ public class Produk {
     String warna;
     String ukuran;
 
+    public Produk(){}
+
+    public Produk(String merk, String nama, String idProduk, String kategori, Integer harga, Integer stok, String warna, String ukuran) {}
+
+    
+
     public String getMerk() {
         return this.merk;
     }
