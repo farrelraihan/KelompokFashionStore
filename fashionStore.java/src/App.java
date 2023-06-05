@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import model.Produk;
 import model.Order;
+
+import model.Costumer;
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
@@ -50,39 +52,19 @@ public class App {
             }
 
             public static void init(){
-                Produk Sepatu = new Produk("Adidas", "Ultraboost", "69BCA20", "Sepatu", 870000, 52, "White", "44");
-                
 
-
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 Order budi = new Order("Budi","0b110","5","10008","10 Feb 2023","932890324","1000000","1");
                 Order karla = new Order("Karla","0b210","3","12008","11 Feb 2023","93276760324","500000","1");
                 Order carool = new Order("Carool","0b111","2","10018","12 Feb 2023","932866524","2000000","1");
            
+
+
+                Produk AdidasSepatu = new Produk("Adidas", "Ultraboost", "69BCA20", "Sepatu", 870000, 52, "White", "44");
+                Produk AdidasBaju = new Produk("Adidas", "Trefoil", "78BXI20", "Baju", 583000, 199, "White", "XXL");
+                Produk NikeSepatu = new Produk("Nike", "Dunk Low Retro", "XXA887A", "Sepatu", 1100000, 2, "White", "47");
+                Costumer Salim = new Costumer("Salim", "082160548923", "salim.ariantou@gmail.com", "Jl. Brahrang");
+
+
             }
         }
 
