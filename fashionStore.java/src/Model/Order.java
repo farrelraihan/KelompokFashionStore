@@ -16,14 +16,14 @@ public class Order {
      */
     String nama;
     String idProduk;    
-    String stok;
+    int stok;
     String idPembayaran;
-    int tanggalPesanan;
-    int nomorTelepon;
+    String tanggalPesanan;
+    String nomorTelepon;
     int harga;
     int jumlah;
 
-    public Order(String nama,String idProduk, String stok, String idPembayaran,String tanggalPesanan,Sring nomorTelepon,int harga,int jumlah){
+    public Order(String nama,String idProduk, int stok, String idPembayaran,String tanggalPesanan,String nomorTelepon,int harga,int jumlah){
         
         this.nama = nama;
         this.idProduk = idProduk;
@@ -54,11 +54,11 @@ public class Order {
         this.idProduk = idProduk;
     }
 
-    public String getStok() {
+    public int getStok() {
         return this.stok;
     }
 
-    public void setStok(String stok) {
+    public void setStok(int stok) {
         this.stok = stok;
     }
 
@@ -70,19 +70,19 @@ public class Order {
         this.idPembayaran = idPembayaran;
     }
 
-    public int getTanggalPesanan() {
+    public String getTanggalPesanan() {
         return this.tanggalPesanan;
     }
 
-    public void setTanggalPesanan(int tanggalPesanan) {
+    public void setTanggalPesanan(String tanggalPesanan) {
         this.tanggalPesanan = tanggalPesanan;
     }
 
-    public int getNomorTelepon() {
+    public String getNomorTelepon() {
         return this.nomorTelepon;
     }
 
-    public void setNomorTelepon(int nomorTelepon) {
+    public void setNomorTelepon (String nomorTelepon) {
         this.nomorTelepon = nomorTelepon;
     }
 
