@@ -16,6 +16,8 @@ public class karyawan {
     String Departemen;
     int Gaji;
     String NomorTelepon;
+    public karyawan(){
+    }
 
     public karyawan(String IdKaryawan, String Name, String Jabatan, String Departemen, int Gaji, String NomorTelepon) {
         this.IdKaryawan = IdKaryawan;
