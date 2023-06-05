@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import model.Produk;
 import model.Costumer;
+import model.Settlement;
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
@@ -55,6 +56,10 @@ public class App {
                 Produk AdidasBaju = new Produk("Adidas", "Trefoil", "78BXI20", "Baju", 583000, 199, "White", "XXL");
                 Produk NikeSepatu = new Produk("Nike", "Dunk Low Retro", "XXA887A", "Sepatu", 1100000, 2, "White", "47");
                 Costumer Salim = new Costumer("Salim", "082160548923", "salim.ariantou@gmail.com", "Jl. Brahrang");
+
+                Settlement trx1 = new Settlement("FS01","BCA",05062023,0123,"Sukses");
+                Settlement trx2 = new Settlement("FS02","QRIS",05062023,0224,"Sukses");
+                Settlement trx3 = new Settlement("FS03","Debit",05052023,1130,"Gagal");
 
             }
         }
