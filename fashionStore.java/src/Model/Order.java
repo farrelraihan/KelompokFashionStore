@@ -21,6 +21,18 @@ public class Order {
     int nomorTelepon;
     int harga;
     int jumlah;
+
+    public Order(String nama,String idProduk, String stok, String idPembayaran,int tanggalPesanan,int nomorTelepon,int harga,int jumlah){
+        
+        this.nama = nama;
+        this.idProduk = idProduk;
+        this.stok = stok;
+        this.idPembayaran = idPembayaran;
+        this.tanggalPesanan = tanggalPesanan;
+        this.nomorTelepon = nomorTelepon;
+        this.harga = harga;
+        this.jumlah = jumlah;
+    }
     
 
     public String getNama() {
@@ -86,6 +98,21 @@ public class Order {
     public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " nama='" + getNama() + "'" +
+            ", idProduk='" + getIdProduk() + "'" +
+            ", stok='" + getStok() + "'" +
+            ", idPembayaran='" + getIdPembayaran() + "'" +
+            ", tanggalPesanan='" + getTanggalPesanan() + "'" +
+            ", nomorTelepon='" + getNomorTelepon() + "'" +
+            ", harga='" + getHarga() + "'" +
+            ", jumlah='" + getJumlah() + "'" +
+            "}";
+    }
+
 
 
 }
