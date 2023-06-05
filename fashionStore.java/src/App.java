@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import model.Produk;
 import model.Order;
+import model.karyawan;
 
 import model.Costumer;
 import model.Settlement;
@@ -71,6 +72,9 @@ public class App {
                 Settlement trx2 = new Settlement("FS02","QRIS",05062023,0224,"Sukses");
                 Settlement trx3 = new Settlement("FS03","Debit",05052023,1130,"Gagal");
 
+                karyawan Puan = new karyawan("03081220031", "Puan", "Manajer", "Pemasaran", 4500000, "081260789229");
+                karyawan Toni = new karyawan("03081220032", "Toni", "Desainer Fashion", "Design", 7500000, "081360789443");
+                karyawan Dandy = new karyawan("03081220033", "Dandy", "Manajer", "Produksi", 8500000, "081260989119");
 
             }
         }
