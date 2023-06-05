@@ -34,7 +34,7 @@ public class Order {
         this.harga = harga;
         this.jumlah = jumlah;
     }
-    public order() {
+    public Order() {
         
     }
 
