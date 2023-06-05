@@ -51,6 +51,7 @@ public class App {
             public static void init(){
                 Produk Sepatu = new Produk("Adidas", "Ultraboost", "69BCA20", "Sepatu", 870000, 52, "White", "44");
                 
+            }
         }
         
     
