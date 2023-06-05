@@ -1,6 +1,7 @@
 package model;
 
 public class Order {
+    
 
     /*
      * deskripsi
@@ -14,14 +15,28 @@ public class Order {
      * Id pembayaran   : Id pemabayaran dari suatru produk
      */
     String nama;
-    String idProduk;
+    String idProduk;    
     String stok;
     String idPembayaran;
     int tanggalPesanan;
     int nomorTelepon;
     int harga;
     int jumlah;
-    
+
+    public Order(String nama,String idProduk, String stok, String idPembayaran,int tanggalPesanan,int nomorTelepon,int harga,int jumlah){
+        
+        this.nama = nama;
+        this.idProduk = idProduk;
+        this.stok = stok;
+        this.idPembayaran = idPembayaran;
+        this.tanggalPesanan = tanggalPesanan;
+        this.nomorTelepon = nomorTelepon;
+        this.harga = harga;
+        this.jumlah = jumlah;
+    }
+    public Order() {
+        
+    }
 
     public String getNama() {
         return this.nama;
@@ -86,6 +101,21 @@ public class Order {
     public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
     }
+
+    @Override
+    public String toString() {
+        return "|" +
+            " " + getNama() + "\t|" +
+            " " + getIdProduk() + "\t|" +
+            " " + getStok() + "\t|" +
+            " " + getIdPembayaran() + "\t|" +
+            " " + getTanggalPesanan() + "\t|" +
+            " " + getNomorTelepon() + "\t|" +
+            " " + getHarga() + "\t|" +
+            " '" + getJumlah() + "\t|" +
+            "";
+    }
+
 
 
 }

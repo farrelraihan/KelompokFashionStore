@@ -21,6 +21,15 @@ public class Costumer {
      String email;
      String address;
 
+    public Costumer() {
+    }
+
+    public Costumer(String name, String phoneNumber, String email, String address) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+    }
 
     public String getName() {
         return this.name;
@@ -54,6 +63,13 @@ public class Costumer {
         this.address = address;
     }
 
-
-    
+    @Override
+    public String toString() {
+        return "{" +
+            " name='" + getName() + "'" +
+            ", phoneNumber='" + getPhoneNumber() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", address='" + getAddress() + "'" +
+            "}";
+    }
 }

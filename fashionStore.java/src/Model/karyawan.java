@@ -10,19 +10,30 @@ public class karyawan {
      * NomorTelepon : untuk menginput nomor telepon karyawan
      */
 
-    String idKaryawan;
+    String IdKaryawan;
     String Name;
     String Jabatan;
     String Departemen;
     int Gaji;
     String NomorTelepon;
+    public karyawan(){
+    }
+
+    public karyawan(String IdKaryawan, String Name, String Jabatan, String Departemen, int Gaji, String NomorTelepon) {
+        this.IdKaryawan = IdKaryawan;
+        this.Name = Name;
+        this.Jabatan = Jabatan;
+        this.Departemen = Departemen;
+        this.Gaji = Gaji;
+        this.Departemen = Departemen;
+    }
 
     public String getIdKaryawan() {
-        return this.idKaryawan;
+        return this.IdKaryawan;
     }
 
     public void setIdKaryawan(String idKaryawan) {
-        this.idKaryawan = idKaryawan;
+        this.IdKaryawan = idKaryawan;
     }
 
     public String getName() {
@@ -63,5 +74,17 @@ public class karyawan {
 
     public void setNomorTelepon(String NomorTelepon) {
         this.NomorTelepon = NomorTelepon;
+    }
+
+    @Override
+    public String toString() {
+        return "|" +
+            " " + getIdKaryawan() + "\t|" +
+            " " + getName() + "\t|" +
+            " " + getJabatan() + "\t|" +
+            " " + getDepartemen() + "\t|" +
+            " " + getGaji() + "\t|" +
+            " " + getNomorTelepon() + "\t|" +
+            "";
     }
 }
