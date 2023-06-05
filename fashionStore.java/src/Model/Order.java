@@ -23,7 +23,7 @@ public class Order {
     int harga;
     int jumlah;
 
-    public Order(String nama,String idProduk, String stok, String idPembayaran,int tanggalPesanan,int nomorTelepon,int harga,int jumlah){
+    public Order(String nama,String idProduk, String stok, String idPembayaran,String tanggalPesanan,Sring nomorTelepon,int harga,int jumlah){
         
         this.nama = nama;
         this.idProduk = idProduk;

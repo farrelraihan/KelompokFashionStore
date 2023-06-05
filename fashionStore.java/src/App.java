@@ -54,9 +54,9 @@ public class App {
 
             public static void init(){
 
-                Order budi = new Order("Budi","0b110","5","10008","10 Feb 2023","932890324","1000000","1");
-                Order karla = new Order("Karla","0b210","3","12008","11 Feb 2023","93276760324","500000","1");
-                Order carool = new Order("Carool","0b111","2","10018","12 Feb 2023","932866524","2000000","1");
+                Order budi = new Order("Budi","0b110",5,"10008","10 Feb 2023","932890324",1000000,1);
+                Order karla = new Order("Karla","0b210",3,"12008","11 Feb 2023","93276760324",500000,1);
+                Order carool = new Order("Carool","0b111",2,"10018","12 Feb 2023","932866524",2000000,1);
            
 
 
