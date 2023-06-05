@@ -34,6 +34,21 @@ public class Produk {
 
     public Produk(String merk, String nama, String idProduk, String kategori, Integer harga, Integer stok, String warna, String ukuran) {}
 
+    @Override
+    public String toString() {
+        return "{" +
+            " merk='" + getMerk() + "'" +
+            ", nama='" + getNama() + "'" +
+            ", idProduk='" + getIdProduk() + "'" +
+            ", kategori='" + getKategori() + "'" +
+            ", harga='" + getHarga() + "'" +
+            ", stok='" + getStok() + "'" +
+            ", warna='" + getWarna() + "'" +
+            ", ukuran='" + getUkuran() + "'" +
+            "}";
+    }
+
+
     
 
     public String getMerk() {
