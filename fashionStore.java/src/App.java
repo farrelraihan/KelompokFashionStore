@@ -68,9 +68,9 @@ public class App {
                 Costumer Justin = new Costumer("Justin", "082134517682", "Justin.lo@gmail.com", "Jl. Ahmad Yani");
                 Costumer Farrel = new Costumer("Farrel", "082188653391", "farrel21@gmail.com", "Jl. Setia Budi");
 
-                Settlement trx1 = new Settlement("FS01","BCA",05062023,0123,"Sukses");
-                Settlement trx2 = new Settlement("FS02","QRIS",05062023,0224,"Sukses");
-                Settlement trx3 = new Settlement("FS03","Debit",05052023,1130,"Gagal");
+                Settlement trx1 = new Settlement("FS01","BCA","05062023","0123","Sukses");
+                Settlement trx2 = new Settlement("FS02","QRIS","05062023","0224","Sukses");
+                Settlement trx3 = new Settlement("FS03","Debit","05052023","1130","Gagal");
 
                 karyawan Puan = new karyawan("03081220031", "Puan", "Manajer", "Pemasaran", 4500000, "081260789229");
                 karyawan Toni = new karyawan("03081220032", "Toni", "Desainer Fashion", "Design", 7500000, "081360789443");

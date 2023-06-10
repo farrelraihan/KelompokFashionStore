@@ -16,14 +16,14 @@ public class Settlement {
 
     String idTransaksi;
     String metode;
-    Integer tanggalSettlement;
-    Integer waktuSettlement;
+    String tanggalSettlement;
+    String waktuSettlement;
     String status;
 
     public Settlement() {
     }
 
-    public Settlement(String idTransaksi, String metode, Integer tanggalSettlement, Integer waktuSettlement, String status) {
+    public Settlement(String idTransaksi, String metode, String tanggalSettlement, String waktuSettlement, String status) {
         this.idTransaksi = idTransaksi;
         this.metode = metode;
         this.tanggalSettlement = tanggalSettlement;
@@ -48,19 +48,19 @@ public class Settlement {
         this.metode = metode;
     }
 
-    public Integer getTanggalSettlement() {
+    public String getTanggalSettlement() {
         return this.tanggalSettlement;
     }
 
-    public void setTanggalSettlement(Integer tanggalSettlement) {
+    public void setTanggalSettlement(String tanggalSettlement) {
         this.tanggalSettlement = tanggalSettlement;
     }
 
-    public Integer getWaktuSettlement() {
+    public String getWaktuSettlement() {
         return this.waktuSettlement;
     }
 
-    public void setWaktuSettlement(Integer waktuSettlement) {
+    public void setWaktuSettlement(String waktuSettlement) {
         this.waktuSettlement = waktuSettlement;
     }
 
@@ -72,6 +72,8 @@ public class Settlement {
         this.status = status;
     }
 
+
+    
 
     @Override
     public String toString() {
