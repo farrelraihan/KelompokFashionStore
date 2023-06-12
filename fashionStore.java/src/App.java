@@ -15,12 +15,16 @@ public class App {
         
                 do {
                     System.out.println("==== Angkasa Fashion Store ====");
-                    System.out.println("1. Tambah Produk");
-                    System.out.println("2. Tambah Data Customer");
-                    System.out.println("3. Tambah Data Sales");
-                    System.out.println("4. Cek Inventori");
-                    System.out.println("5. Update Data Karyawan");
-                    System.out.println("6. Cek Sales");
+                    System.out.println("1. Tambah Data Produk");
+                    System.out.println("2. Cetak Data Produk");
+                    System.out.println("3. Tambah Data Karyawan");
+                    System.out.println("4. Cetak Data Karyawan");
+                    System.out.println("5. Tambah Data Order");
+                    System.out.println("6. Cetak Data Order");
+                    System.out.println("7. Tambah Data Customer");
+                    System.out.println("8. Cetak Data Customer");
+                    System.out.println("9. Tambah Data Sales");
+                    System.out.println("10. Cetak Data Sales");
                     System.out.print("Enter your choice: ");
                     
                     choice = scanner.nextInt();
@@ -41,6 +45,21 @@ public class App {
                             break;
                         case  5:
                             System.out.println("You Selected Option 5");
+                            break;
+                        case  6:
+                            System.out.println("You Selected Option 6");
+                            break;
+                        case  7:
+                            System.out.println("You Selected Option 7");
+                            break;
+                        case  8:
+                            System.out.println("You Selected Option 8");
+                            break;
+                        case  9:
+                            System.out.println("You Selected Option 9");
+                            break;
+                        case  10:
+                            System.out.println("You Selected Option 10");
                             break;
                         default:
                             System.out.println("Invalid choice. Please try again.");
@@ -77,6 +96,7 @@ public class App {
                 karyawan Dandy = new karyawan("03081220033", "Dandy", "Manajer", "Produksi", 8500000, "081260989119");
 
             }
+             
         }
 
     
