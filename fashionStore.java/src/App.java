@@ -6,6 +6,7 @@ import model.karyawan;
 import model.Costumer;
 import model.Settlement;
 public class App {
+    static Produk produk[] = new Produk[20];
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         System.out.println("Ini adalah kelompok fashion store ASHIAAAAP");
@@ -32,10 +33,10 @@ public class App {
                     
                     switch (choice) {
                         case 1:
-                            System.out.println("You selected Option 1");
+                            buatProduk();
                             break;
                         case 2:
-                            System.out.println("You selected Option 2");
+                            printProduk();
                             break;
                         case 3:
                             System.out.println("You selected Option 3");
@@ -96,7 +97,48 @@ public class App {
                 karyawan Dandy = new karyawan("03081220033", "Dandy", "Manajer", "Produksi", 8500000, "081260989119");
 
             }
-             
+             public static Produk buatProduk() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter product name: ");
+        String merk = scanner.nextLine();
+        System.out.print("Enter product variant: ");
+        String nama = scanner.nextLine();
+        System.out.print("Enter product ID: ");
+        String idProduk = scanner.nextLine();
+        System.out.print("Enter product category: ");
+        String kategori = scanner.nextLine();
+        System.out.print("Enter product price: ");
+        int harga = scanner.nextInt();
+        scanner.nextLine(); // consume the newline character
+        System.out.print("Enter product stock: ");
+        int stok = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Enter product color: ");
+        String warna = scanner.nextLine();
+        System.out.print("Enter product size: ");
+        String ukuran = scanner.nextLine();
+        
+
+        Produk newProduk = new Produk(merk, nama, idProduk, kategori, harga, stok, warna, ukuran);
+    
+    // Find the first empty slot in the array and insert the new product
+    for (int i = 0; i < produk.length; i++) {
+        if (produk[i] == null) {
+            produk[i] = newProduk;
+            break;
+        }
+    }
+    
+    return newProduk;
+}
+public static void printProduk() {
+        for (int j = 0; j < produk.length; j++) {
+            if (produk[j] != null) {
+                System.out.println(produk[j]);
+            }
+        }
+        System.out.println();
+    }
         }
 
     
