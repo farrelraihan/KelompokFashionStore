@@ -172,13 +172,18 @@ public static karyawan buatKaryawan(){
     return newKaryawan;
 }
 public static void printKaryawan() {
-        for (int j = 0; j < karyawan.length; j++) {
-            if (karyawan[j] != null) {
-                System.out.println(karyawan[j]);
-
-        }
-        System.out.println();
+    for (int j = 0; j < karyawan.length; j++) {
+        if (karyawan[j] != null) {
+            System.out.println("Employee[" + j + "]:");
+            System.out.println("ID Karyawan: " + karyawan[j].getIdKaryawan());
+            System.out.println("Nama Karyawan: " + karyawan[j].getName());
+            System.out.println("Jabatan Karyawan: " + karyawan[j].getJabatan());
+            System.out.println("Departemen Karyawan: " + karyawan[j].getDepartemen());
+            System.out.println("Gaji Karyawan: " + karyawan[j].getGaji());
+            System.out.println("Nomor Telepon Karyawan: " + karyawan[j].getNomorTelepon());
+            System.out.println();
     }
+}
 }
 static Order order[] = new Order[20];
 public static Order buatOrder() {
