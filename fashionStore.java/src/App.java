@@ -39,10 +39,10 @@ public class App {
                             printProduk();
                             break;
                         case 3:
-                            System.out.println("You selected Option 3");
+                            buatKaryawan();
                             break;
                         case 4:
-                            System.out.println("You selected Option 4");
+                            printKaryawan();
                             break;
                         case  5:
                             System.out.println("You Selected Option 5");
@@ -141,34 +141,46 @@ public static void printProduk() {
     }
 
     
-        public static karyawan buatKaryawan(){
+    private static karyawan[] karyawan = new karyawan[10];
 
-          Scanner scanner = new Scanner(System.in);
-            System.out.print("Input ID Karyawan: ");
-            String idKaryawan = scanner.nextLine();
-            System.out.print("Input Nama Karyawan: ");
-            String namaKaryawan = scanner.nextLine();
-            System.out.print("Input Jabatan Karyawan: ");
-            String jabatanKaryawan = scanner.nextLine();
-            System.out.print("Input Departemen Karyawan: ");
-            String departemen = scanner.nextLine();
-            System.out.print("Input Gaji Karyawan: ");
-            Integer gajiKaryawan = scanner.nextInt(); 
-            System.out.print("Input Nomor Telepon Karyawan: ");
-            String nomorTelepon = scanner.nextLine();
+public static karyawan buatKaryawan(){
 
-            //ini kenapa ga aktif ya karyawan and new karyawannya?
-            karyawan = newKaryawan = new karyawan(idKaryawan, namaKaryawan, jabatanKaryawan, departemen, 0, nomorTelepon);
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Input ID Karyawan: ");
+    String idKaryawan = scanner.nextLine();
+    System.out.print("Input Nama Karyawan: ");
+    String Name = scanner.nextLine();
+    System.out.print("Input Jabatan Karyawan: ");
+    String Jabatan = scanner.nextLine();
+    System.out.print("Input Departemen Karyawan: ");
+    String Departemen = scanner.nextLine();
+    System.out.print("Input Gaji Karyawan: ");
+    Integer Gaji = scanner.nextInt(); 
+    System.out.print("Input Nomor Telepon Karyawan: ");
+    String NomorTelepon = scanner.nextLine();
 
-            for (int i = 0; i < karyawan.length; i++) {
+    
+    // declare newKaryawan as an object of the class karyawan
+    karyawan newKaryawan = new karyawan(idKaryawan, Name, Jabatan, Departemen, 0, NomorTelepon);
+
+    for (int i = 0; i < karyawan.length; i++) {
         if (karyawan[i] == null) {
             karyawan[i] = newKaryawan;
             break;
-
-
         }
     }
+    return newKaryawan;
+}
+public static void printKaryawan() {
+        for (int j = 0; j < karyawan.length; j++) {
+            if (karyawan[j] != null) {
+                System.out.println(karyawan[j]);
 
+        }
+        System.out.println();
+    }
+}
+}
 
     
 
