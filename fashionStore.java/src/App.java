@@ -139,7 +139,36 @@ public static void printProduk() {
         }
         System.out.println();
     }
+
+    
+        public static karyawan buatKaryawan(){
+
+          Scanner scanner = new Scanner(System.in);
+            System.out.print("Input ID Karyawan: ");
+            String idKaryawan = scanner.nextLine();
+            System.out.print("Input Nama Karyawan: ");
+            String namaKaryawan = scanner.nextLine();
+            System.out.print("Input Jabatan Karyawan: ");
+            String jabatanKaryawan = scanner.nextLine();
+            System.out.print("Input Departemen Karyawan: ");
+            String departemen = scanner.nextLine();
+            System.out.print("Input Gaji Karyawan: ");
+            Integer gajiKaryawan = scanner.nextInt(); 
+            System.out.print("Input Nomor Telepon Karyawan: ");
+            String nomorTelepon = scanner.nextLine();
+
+            //ini kenapa ga aktif ya karyawan and new karyawannya?
+            karyawan = newKaryawan = new karyawan(idKaryawan, namaKaryawan, jabatanKaryawan, departemen, 0, nomorTelepon);
+
+            for (int i = 0; i < karyawan.length; i++) {
+        if (karyawan[i] == null) {
+            karyawan[i] = newKaryawan;
+            break;
+
+
         }
+    }
+
 
     
 
