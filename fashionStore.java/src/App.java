@@ -24,8 +24,8 @@ public class App {
                     System.out.println("6. Cetak Data Order");
                     System.out.println("7. Tambah Data Customer");
                     System.out.println("8. Cetak Data Customer");
-                    System.out.println("9. Tambah Data Sales");
-                    System.out.println("10. Cetak Data Sales");
+                    System.out.println("9. Tambah Data Settlement");
+                    System.out.println("10. Cetak Data Settlement");
                     System.out.print("Enter your choice: ");
                     
                     choice = scanner.nextInt();
@@ -45,22 +45,22 @@ public class App {
                             printKaryawan();
                             break;
                         case  5:
-                            System.out.println("You Selected Option 5");
+                            buatOrder();
                             break;
                         case  6:
-                            System.out.println("You Selected Option 6");
+                            printOrder();
                             break;
                         case  7:
-                            System.out.println("You Selected Option 7");
+                            buatCostumer();
                             break;
                         case  8:
-                            System.out.println("You Selected Option 8");
+                            printCostumer();
                             break;
                         case  9:
-                            System.out.println("You Selected Option 9");
+                            buatSettlement();
                             break;
                         case  10:
-                            System.out.println("You Selected Option 10");
+                            printSettlement();
                             break;
                         default:
                             System.out.println("Invalid choice. Please try again.");
@@ -179,6 +179,113 @@ public static void printKaryawan() {
         }
         System.out.println();
     }
+}
+static Order order[] = new Order[20];
+public static Order buatOrder() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan nama: ");
+        String nama = scanner.nextLine();
+        System.out.print("Masukkan ID Produk: ");
+        String idProduk = scanner.nextLine();
+        System.out.print("Masukkan Stok: ");
+        int stok = scanner.nextInt();
+        System.out.print("Masukkan ID Pembayaran: ");
+        String idPembayaran = scanner.nextLine();
+        System.out.print("Masukkan Tanggal Pesanan: ");
+        String tanggalPesanan = scanner.nextLine();
+        scanner.nextLine(); // consume the newline character
+        System.out.print("Masukkan Nomor Telepon: ");
+        String nomorTelepon = scanner.next();
+        scanner.nextLine();
+        System.out.print("Masukkan Harga: ");
+        int harga = scanner.nextInt();
+        System.out.print("Masukkan Jumlah: ");
+        int jumlah = scanner.nextInt();
+        
+
+        Order newOrder = new Order(nama,idProduk,stok,idPembayaran,tanggalPesanan,nomorTelepon,harga,jumlah);
+    
+    // Find the first empty slot in the array and insert the new product
+    for (int i = 0; i < produk.length; i++) {
+        if (order[i] == null) {
+            order[i] = newOrder;
+            break;
+        }
+    }
+    return newOrder;
+}
+public static void printOrder() {
+        for (int j = 0; j < produk.length; j++) {
+            if (order[j] != null) {
+                System.out.println(order[j]);
+            }
+        }
+        System.out.println();
+    }
+static Costumer costumer[] = new Costumer[20];
+public static Costumer buatCostumer() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan nama: ");
+        String name = scanner.nextLine();
+        System.out.print("Masukkan nomor telepon: ");
+        String phoneNumber = scanner.nextLine();
+        System.out.print("Masukkan email: ");
+        String email = scanner.nextLine();
+        System.out.print("Masukkan alamat: ");
+        String address = scanner.nextLine();
+        
+
+        Costumer newCostumer = new Costumer(name,phoneNumber,email,address);
+    
+    // Find the first empty slot in the array and insert the new product
+    for (int i = 0; i < produk.length; i++) {
+        if (costumer[i] == null) {
+            costumer[i] = newCostumer;
+            break;
+        }
+    }
+    return newCostumer;
+}
+public static void printCostumer() {
+        for (int j = 0; j < produk.length; j++) {
+            if (costumer[j] != null) {
+                System.out.println(costumer[j]);
+            }
+        }
+        System.out.println();
+}
+static Settlement settlement[] = new Settlement[20];
+public static Settlement buatSettlement() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan ID transaksi: ");
+        String idTransaksi = scanner.nextLine();
+        System.out.print("Masukkan metode pembayaran: ");
+        String metode = scanner.nextLine();
+        System.out.print("Masukkan tanggal: ");
+        String tanggalSettlement = scanner.nextLine();
+        System.out.print("Masukkan waktu: ");
+        String waktuSettlement = scanner.nextLine();
+        System.out.print("Masukkan status: ");
+        String status = scanner.nextLine();
+
+        Settlement newSettlement = new Settlement(idTransaksi,metode,tanggalSettlement,waktuSettlement,status);
+    
+    // Find the first empty slot in the array and insert the new product
+    for (int i = 0; i < produk.length; i++) {
+        if (settlement[i] == null) {
+            settlement[i] = newSettlement;
+            break;
+        }
+    }
+    return newSettlement;
+}
+public static void printSettlement() {
+        for (int j = 0; j < produk.length; j++) {
+            if (settlement[j] != null) {
+                System.out.println(settlement[j]);
+            }
+        }
+        System.out.println();
 }
 }
 
