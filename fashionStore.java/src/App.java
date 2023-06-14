@@ -161,7 +161,7 @@ public static karyawan buatKaryawan(){
 
     
     // declare newKaryawan as an object of the class karyawan
-    karyawan newKaryawan = new karyawan(idKaryawan, Name, Jabatan, Departemen, 0, NomorTelepon);
+    karyawan newKaryawan = new karyawan(idKaryawan, Name, Jabatan, Departemen, Gaji, NomorTelepon);
 
     for (int i = 0; i < karyawan.length; i++) {
         if (karyawan[i] == null) {
