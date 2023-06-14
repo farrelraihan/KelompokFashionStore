@@ -26,6 +26,7 @@ public class App {
                     System.out.println("8. Cetak Data Customer");
                     System.out.println("9. Tambah Data Settlement");
                     System.out.println("10. Cetak Data Settlement");
+                    System.out.println("11. Exit Program");
                     System.out.print("Enter your choice: ");
                     
                     choice = scanner.nextInt();
@@ -62,6 +63,8 @@ public class App {
                         case  10:
                             printSettlement();
                             break;
+                        case 11:
+                            System.exit(0);
                         default:
                             System.out.println("Invalid choice. Please try again.");
                             break;
