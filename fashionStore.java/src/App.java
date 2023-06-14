@@ -155,7 +155,8 @@ public static karyawan buatKaryawan(){
     System.out.print("Input Departemen Karyawan: ");
     String Departemen = scanner.nextLine();
     System.out.print("Input Gaji Karyawan: ");
-    Integer Gaji = scanner.nextInt(); 
+    Integer Gaji = scanner.nextInt();
+    scanner.nextLine();
     System.out.print("Input Nomor Telepon Karyawan: ");
     String NomorTelepon = scanner.nextLine();
 

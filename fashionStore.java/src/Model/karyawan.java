@@ -26,6 +26,7 @@ public class karyawan {
         this.Departemen = Departemen;
         this.Gaji = Gaji;
         this.Departemen = Departemen;
+        this.NomorTelepon = NomorTelepon;
     }
 
     public String getIdKaryawan() {
