@@ -165,6 +165,7 @@ public static karyawan buatKaryawan(){
 
     
     // declare newKaryawan as an object of the class karyawan
+    // Setelah run, dia auto end. Harus fix agar langsung buka menu lagi.
     karyawan newKaryawan = new karyawan(idKaryawan, Name, Jabatan, Departemen, Gaji, NomorTelepon);
 
     for (int i = 0; i < karyawan.length; i++) {
