@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import model.Produk;
 import model.Order;
@@ -6,6 +8,13 @@ import model.karyawan;
 import model.Costumer;
 import model.Settlement;
 public class App {
+    static List<Produk> produkList = new ArrayList<>();
+    static List<Order> orderList = new ArrayList<>();
+    static List<Costumer> costumerList = new ArrayList<>();
+    static List<Settlement> settlementList = new ArrayList<>();
+    static List<karyawan> karyawanList = new ArrayList<>();
+
+
     static Produk produk[] = new Produk[20];
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
@@ -100,6 +109,8 @@ public class App {
                 karyawan Dandy = new karyawan("03081220033", "Dandy", "Manajer", "Produksi", 8500000, "081260989119");
 
             }
+            // disuruh ubah sistem inputan jadi gunakan array list. refer ke
+            // https://chat.openai.com/share/f137db60-fb36-43d8-9847-2d50648cb2f9
              public static Produk buatProduk() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter product name: ");
