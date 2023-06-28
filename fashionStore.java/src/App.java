@@ -7,6 +7,7 @@ import model.karyawan;
 
 import model.Costumer;
 import model.Settlement;
+
 public class App {
     static List<Produk> produkList = new ArrayList<>();
     static List<Order> orderList = new ArrayList<>();
@@ -113,9 +114,9 @@ public class App {
             // https://chat.openai.com/share/f137db60-fb36-43d8-9847-2d50648cb2f9
              public static Produk buatProduk() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter product name: ");
+        System.out.print("Enter product Brand: ");
         String merk = scanner.nextLine();
-        System.out.print("Enter product variant: ");
+        System.out.print("Enter product Name: ");
         String nama = scanner.nextLine();
         System.out.print("Enter product ID: ");
         String idProduk = scanner.nextLine();
@@ -134,24 +135,27 @@ public class App {
         
 
         Produk newProduk = new Produk(merk, nama, idProduk, kategori, harga, stok, warna, ukuran);
+        produkList.add(newProduk);
+
+        return newProduk;
     
-    // Find the first empty slot in the array and insert the new product
-    for (int i = 0; i < produk.length; i++) {
-        if (produk[i] == null) {
-            produk[i] = newProduk;
-            break;
-        }
-    }
+     }
     
-    return newProduk;
+        public static void printProduk() {
+            for (int i = 0; i < produkList.size(); i++) {
+    Produk produk = produkList.get(i);
+    System.out.println("Product[" + (i + 1) + "]:");
+    System.out.println("Merk: " + produk.getMerk());
+    System.out.println("Nama: " + produk.getNama());
+    System.out.println("ID Produk: " + produk.getIdProduk());
+    System.out.println("Kategori: " + produk.getKategori());
+    System.out.println("Harga: " + produk.getHarga());
+    System.out.println("Stok: " + produk.getStok());
+    System.out.println("Warna: " + produk.getWarna());
+    System.out.println("Ukuran: " + produk.getUkuran());
+    System.out.println();
 }
-public static void printProduk() {
-        for (int j = 0; j < produk.length; j++) {
-            if (produk[j] != null) {
-                System.out.println(produk[j]);
-            }
-        }
-        System.out.println();
+
     }
 
     
