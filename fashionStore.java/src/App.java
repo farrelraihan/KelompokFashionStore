@@ -81,7 +81,7 @@ public class App {
                     }
                     
                     System.out.println(); // Print an empty line for readability
-                } while (choice != 4);
+                } while (choice != 12);
                 
                 scanner.close();
             }
