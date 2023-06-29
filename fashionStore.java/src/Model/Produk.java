@@ -21,14 +21,14 @@ public class Produk {
      
 
      */
-    String merk;
-    String nama;
-    String idProduk;
-    String kategori;
-    Integer harga;
-    Integer stok;
-    String warna;
-    String ukuran;
+    private String merk;
+    private String nama;
+    private String idProduk;
+    private String kategori;
+    private Integer harga;
+    private Integer stok;
+    private String warna;
+    private String ukuran;
 
     public Produk(){
     
