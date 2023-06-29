@@ -16,6 +16,7 @@ public class karyawan {
     String Departemen;
     int Gaji;
     String NomorTelepon;
+    
     public karyawan(){
     }
 
