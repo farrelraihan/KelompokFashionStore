@@ -140,8 +140,9 @@ public class App {
         return newProduk;
     
      }
-    
-        public static void printProduk() {
+        //belum implement gimana agar idProduk disini masuk ke idProduk di OrderDetail 
+        //https://chat.openai.com/share/a7a29934-1f94-45be-8842-d55a28376c86
+        public static void printProduk() { //belum implement gimana agar idProduk disini masuk ke idProduk di OrderDetail 
             for (int i = 0; i < produkList.size(); i++) {
     Produk produk = produkList.get(i);
     System.out.println("Product[" + (i + 1) + "]:");
