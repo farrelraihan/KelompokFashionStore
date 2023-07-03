@@ -112,7 +112,8 @@ public class App {
             }
             // disuruh ubah sistem inputan jadi gunakan array list. refer ke
             // https://chat.openai.com/share/f137db60-fb36-43d8-9847-2d50648cb2f9
-             public static Produk buatProduk() {
+           
+            public static Produk buatProduk() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter product Brand: ");
         String merk = scanner.nextLine();
@@ -133,7 +134,7 @@ public class App {
         System.out.print("Enter product size: ");
         String ukuran = scanner.nextLine();
         
-
+                //arraylist
         Produk newProduk = new Produk(merk, nama, idProduk, kategori, harga, stok, warna, ukuran);
         produkList.add(newProduk);
 
@@ -142,6 +143,7 @@ public class App {
      }
         //belum implement gimana agar idProduk disini masuk ke idProduk di OrderDetail 
         //https://chat.openai.com/share/a7a29934-1f94-45be-8842-d55a28376c86
+        
         public static void printProduk() { //belum implement gimana agar idProduk disini masuk ke idProduk di OrderDetail 
             for (int i = 0; i < produkList.size(); i++) {
     Produk produk = produkList.get(i);
@@ -205,48 +207,59 @@ public static void printKaryawan() {
             System.out.println();
     }
 }
-}
-static Order order[] = new Order[20];
+} //ini salah total masih, karena kita belum ubah attribute2 nya semenjak kita buat orderDetail
+// static Order order[] = new Order[20];
+
 public static Order buatOrder() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan nama: ");
-        String nama = scanner.nextLine();
-        System.out.print("Masukkan ID Produk: ");
-        String idProduk = scanner.nextLine();
-        System.out.print("Masukkan Stok: ");
-        int stok = scanner.nextInt();
-        System.out.print("Masukkan ID Pembayaran: ");
-        String idPembayaran = scanner.nextLine();
+        System.out.print("Masukkan OrderID: ");
+        String orderID = scanner.nextLine();
+        System.out.print("Masukkan Customer Name: ");
+        String customerName = scanner.nextLine();
+        System.out.print("Masukkan Customer Phone Number: ");
+        int customerPhoneNumber = scanner.nextInt();
         System.out.print("Masukkan Tanggal Pesanan: ");
         String tanggalPesanan = scanner.nextLine();
+        System.out.print("Masukkan Tanggal Pesanan: ");
+        int hargaTotal = scanner.nextInt();
         scanner.nextLine(); // consume the newline character
         System.out.print("Masukkan Nomor Telepon: ");
-        String nomorTelepon = scanner.next();
+        String karyawan = scanner.next();
         scanner.nextLine();
-        System.out.print("Masukkan Harga: ");
-        int harga = scanner.nextInt();
-        System.out.print("Masukkan Jumlah: ");
-        int jumlah = scanner.nextInt();
+        // System.out.print("Masukkan Harga: ");
+        // int harga = scanner.nextInt();
+        // System.out.print("Masukkan Jumlah: ");
+        // int jumlah = scanner.nextInt();
         
+        Order newOrder = new Order(orderID, customerName, customerName, tanggalPesanan, hargaTotal, karyawan);
+        orderList.add(newOrder);
 
-        Order newOrder = new Order(nama,idProduk,stok,idPembayaran,tanggalPesanan,nomorTelepon,harga,jumlah);
+        return newOrder;
     
     // Find the first empty slot in the array and insert the new product
-    for (int i = 0; i < produk.length; i++) {
-        if (order[i] == null) {
-            order[i] = newOrder;
-            break;
-        }
-    }
-    return newOrder;
+    // for (int i = 0; i < produk.length; i++) {
+    //     if (order[i] == null) {
+    //         order[i] = newOrder;
+    //         break;
+    //     }
+    // }
+    // return newOrder;
 }
 public static void printOrder() {
-        for (int j = 0; j < produk.length; j++) {
-            if (order[j] != null) {
-                System.out.println(order[j]);
-            }
-        }
-        System.out.println();
+        for (int i = 0; i < orderList.size(); i++) {
+    Order order = orderList.get(i);
+    System.out.println("Order[" + (i + 1) + "]:");
+    System.out.println("Order ID: " + order.getOrderID());
+    System.out.println("Nama Customer: " + order.getCustomerName());
+    System.out.println("Nomor Telepon Customer: " + order.getCustomerPhoneNumber());
+    System.out.println("Tanggal Pesanan: " + order.getTanggalPesanan());
+    System.out.println("Total Harga: " + order.getHargaTotal());
+    System.out.println("Karyawan: " + order.getKaryawan());
+    // System.out.println("Warna: " + order.getWarna());
+    // System.out.println("Ukuran: " + produk.getUkuran());
+    System.out.println();
+}
+
     }
 static Costumer costumer[] = new Costumer[20];
 public static Costumer buatCostumer() {
