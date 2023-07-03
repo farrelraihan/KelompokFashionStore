@@ -162,7 +162,7 @@ public class App {
     }
 
     
-    private static karyawan[] karyawan = new karyawan[10];
+    // private static karyawan[] karyawan = new karyawan[10];
 
 public static karyawan buatKaryawan(){
 
@@ -185,29 +185,25 @@ public static karyawan buatKaryawan(){
     // declare newKaryawan as an object of the class karyawan
     // Setelah run, dia auto end. Harus fix agar langsung buka menu lagi.
     karyawan newKaryawan = new karyawan(idKaryawan, Name, Jabatan, Departemen, Gaji, NomorTelepon);
+    karyawanList.add(newKaryawan);
 
-    for (int i = 0; i < karyawan.length; i++) {
-        if (karyawan[i] == null) {
-            karyawan[i] = newKaryawan;
-            break;
-        }
-    }
     return newKaryawan;
 }
 public static void printKaryawan() {
-    for (int j = 0; j < karyawan.length; j++) {
-        if (karyawan[j] != null) {
-            System.out.println("Employee[" + j + "]:");
-            System.out.println("ID Karyawan: " + karyawan[j].getIdKaryawan());
-            System.out.println("Nama Karyawan: " + karyawan[j].getName());
-            System.out.println("Jabatan Karyawan: " + karyawan[j].getJabatan());
-            System.out.println("Departemen Karyawan: " + karyawan[j].getDepartemen());
-            System.out.println("Gaji Karyawan: " + karyawan[j].getGaji());
-            System.out.println("Nomor Telepon Karyawan: " + karyawan[j].getNomorTelepon());
+    for (int i = 0; i < karyawanList.size(); i++) {
+    karyawan karyawan = karyawanList.get(i);
+            System.out.println("Karyawan[" + (i + 1) + "]:");
+            System.out.println("ID Karyawan: " + karyawan.getIdKaryawan());
+            System.out.println("Nama Karyawan: " + karyawan.getName());
+            System.out.println("Jabatan Karyawan: " + karyawan.getJabatan());
+            System.out.println("Departemen Karyawan: " + karyawan.getDepartemen());
+            System.out.println("Gaji Karyawan: " + karyawan.getGaji());
+            System.out.println("Nomor Telepon Karyawan: " + karyawan.getNomorTelepon());
             System.out.println();
     }
 }
-} //ini salah total masih, karena kita belum ubah attribute2 nya semenjak kita buat orderDetail
+ //ini salah total masih, karena kita belum ubah attribute2 nya semenjak kita buat orderDetail
+// edit note atas, done udah diperbaiki.
 // static Order order[] = new Order[20];
 
 public static Order buatOrder() {
