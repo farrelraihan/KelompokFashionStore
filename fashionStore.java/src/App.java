@@ -88,9 +88,9 @@ public class App {
 
             public static void init(){
 
-                Order budi = new Order("Budi","0b110",5,"10008","10 Feb 2023","932890324",1000000,1);
-                Order karla = new Order("Karla","0b210",3,"12008","11 Feb 2023","93276760324",500000,1);
-                Order carool = new Order("Carool","0b111",2,"10018","12 Feb 2023","932866524",2000000,1);
+                // Order budi = new Order("Budi","0b110",5,"10008","10 Feb 2023","932890324",1000000,1);
+                // Order karla = new Order("Karla","0b210",3,"12008","11 Feb 2023","93276760324",500000,1);
+                // Order carool = new Order("Carool","0b111",2,"10018","12 Feb 2023","932866524",2000000,1);
            
 
 
@@ -101,9 +101,9 @@ public class App {
                 Costumer Justin = new Costumer("Justin", "082134517682", "Justin.lo@gmail.com", "Jl. Ahmad Yani");
                 Costumer Farrel = new Costumer("Farrel", "082188653391", "farrel21@gmail.com", "Jl. Setia Budi");
 
-                Settlement trx1 = new Settlement("FS01","BCA","05062023","0123","Sukses");
-                Settlement trx2 = new Settlement("FS02","QRIS","05062023","0224","Sukses");
-                Settlement trx3 = new Settlement("FS03","Debit","05052023","1130","Gagal");
+                // Settlement trx1 = new Settlement("FS01","BCA","05062023","0123","Sukses");
+                // Settlement trx2 = new Settlement("FS02","QRIS","05062023","0224","Sukses");
+                // Settlement trx3 = new Settlement("FS03","Debit","05052023","1130","Gagal");
 
                 karyawan Puan = new karyawan("03081220031", "Puan", "Manajer", "Pemasaran", 4500000, "081260789229");
                 karyawan Toni = new karyawan("03081220032", "Toni", "Desainer Fashion", "Design", 7500000, "081360789443");
@@ -223,7 +223,7 @@ public static Order buatOrder() {
         System.out.print("Masukkan Tanggal Pesanan: ");
         int hargaTotal = scanner.nextInt();
         scanner.nextLine(); // consume the newline character
-        System.out.print("Masukkan Nomor Telepon: ");
+        System.out.print("Masukkan Karyawan: ");
         String karyawan = scanner.next();
         scanner.nextLine();
         // System.out.print("Masukkan Harga: ");
@@ -293,38 +293,41 @@ public static void printCostumer() {
         }
         System.out.println();
 }
-static Settlement settlement[] = new Settlement[20];
+// static Settlement settlement[] = new Settlement[20];
 public static Settlement buatSettlement() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan ID transaksi: ");
-        String idTransaksi = scanner.nextLine();
-        System.out.print("Masukkan metode pembayaran: ");
+        System.out.print("Masukkan Order ID: ");
+        String orderID = scanner.nextLine();
+        System.out.print("Masukkan Settlement ID: ");
+        String settlementID = scanner.nextLine();
+        System.out.print("Masukkan Metode Pembayaran: ");
         String metode = scanner.nextLine();
-        System.out.print("Masukkan tanggal: ");
+        System.out.print("Masukkan Tanggal Pembayaran: ");
         String tanggalSettlement = scanner.nextLine();
-        System.out.print("Masukkan waktu: ");
-        String waktuSettlement = scanner.nextLine();
-        System.out.print("Masukkan status: ");
-        String status = scanner.nextLine();
-
-        Settlement newSettlement = new Settlement(idTransaksi,metode,tanggalSettlement,waktuSettlement,status);
+        
+        Settlement newSettlement = new Settlement(orderID, settlementID, metode, tanggalSettlement);
+        settlementList.add(newSettlement);
+        return newSettlement;
+        // Settlement newSettlement = new Settlement(idTransaksi,metode,tanggalSettlement,waktuSettlement,status);
     
-    // Find the first empty slot in the array and insert the new product
-    for (int i = 0; i < produk.length; i++) {
-        if (settlement[i] == null) {
-            settlement[i] = newSettlement;
-            break;
-        }
-    }
-    return newSettlement;
+    // // Find the first empty slot in the array and insert the new product
+    // for (int i = 0; i < produk.length; i++) {
+    //     if (settlement[i] == null) {
+    //         settlement[i] = newSettlement;
+    //         break;
+ }
+    public static void printSettlement() {
+    for (int i = 0; i < settlementList.size(); i++) {
+    Settlement settlement = settlementList.get(i);
+    System.out.println("Settlement[" + (i + 1) + "]:");
+    System.out.println("Order ID: " + settlement.getOrderID());
+    System.out.println("Settlement ID: " + settlement.getSettlementID());
+    System.out.println("Metode: " + settlement.getMetode());
+    System.out.println("Tanggal Pembayaran: " + settlement.getTanggalSettlement());
+    System.out.println();
+    // System.out.println("Total Harga: " + order.getHargaTotal());
+    // System.out.println("Karyawan: " + order.getKaryawan());
 }
-public static void printSettlement() {
-        for (int j = 0; j < produk.length; j++) {
-            if (settlement[j] != null) {
-                System.out.println(settlement[j]);
-            }
-        }
-        System.out.println();
 }
 }
 
