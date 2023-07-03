@@ -217,7 +217,7 @@ public static Order buatOrder() {
         System.out.print("Masukkan Customer Name: ");
         String customerName = scanner.nextLine();
         System.out.print("Masukkan Customer Phone Number: ");
-        int customerPhoneNumber = scanner.nextInt();
+        String customerPhoneNumber = scanner.nextLine();
         System.out.print("Masukkan Tanggal Pesanan: ");
         String tanggalPesanan = scanner.nextLine();
         System.out.print("Masukkan Tanggal Pesanan: ");
@@ -231,7 +231,7 @@ public static Order buatOrder() {
         // System.out.print("Masukkan Jumlah: ");
         // int jumlah = scanner.nextInt();
         
-        Order newOrder = new Order(orderID, customerName, customerName, tanggalPesanan, hargaTotal, karyawan);
+        Order newOrder = new Order(orderID, customerName, customerPhoneNumber, tanggalPesanan, hargaTotal, karyawan);
         orderList.add(newOrder);
 
         return newOrder;
