@@ -16,7 +16,7 @@ public class App {
     static List<karyawan> karyawanList = new ArrayList<>();
 
 
-    static Produk produk[] = new Produk[20];
+    // static Produk produk[] = new Produk[20];
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
         System.out.println("Ini adalah kelompok fashion store ASHIAAAAP");
@@ -134,7 +134,7 @@ public class App {
         System.out.print("Enter product size: ");
         String ukuran = scanner.nextLine();
         
-                //arraylist
+        //arraylist
         Produk newProduk = new Produk(merk, nama, idProduk, kategori, harga, stok, warna, ukuran);
         produkList.add(newProduk);
 
@@ -257,7 +257,7 @@ public static void printOrder() {
 }
 
     }
-static Costumer costumer[] = new Costumer[20];
+// static Costumer costumer[] = new Costumer[20];
 public static Costumer buatCostumer() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Masukkan nama: ");
@@ -271,23 +271,37 @@ public static Costumer buatCostumer() {
         
 
         Costumer newCostumer = new Costumer(name,phoneNumber,email,address);
-    
+        costumerList.add(newCostumer);
+
+         return newCostumer;
     // Find the first empty slot in the array and insert the new product
-    for (int i = 0; i < produk.length; i++) {
-        if (costumer[i] == null) {
-            costumer[i] = newCostumer;
-            break;
-        }
+    // for (int i = 0; i < customer.length; i++) {
+    //     if (costumer[i] == null) {
+    //         costumer[i] = newCostumer;
+    //         break;
+    //     }
     }
-    return newCostumer;
-}
+    // return newCostumer;
+
 public static void printCostumer() {
-        for (int j = 0; j < produk.length; j++) {
-            if (costumer[j] != null) {
-                System.out.println(costumer[j]);
-            }
-        }
-        System.out.println();
+
+for (int i = 0; i < costumerList.size(); i++) {
+    Costumer costumer = costumerList.get(i);
+            System.out.println("Customer[" + (i + 1) + "]:");
+            System.out.println("Nama Customer: " + costumer.getName());
+            System.out.println("Customer Phone Number: " + costumer.getPhoneNumber());
+            System.out.println("Customer Email: " + costumer.getEmail());
+            System.out.println("Alamat Customer: " + costumer.getAddress());
+            // System.out.println("Gaji Karyawan: " + costumer.getGaji());
+            // System.out.println("Nomor Telepon Karyawan: " + costumer.getNomorTelepon());
+            System.out.println();
+}
+        // for (int j = 0; j < customer.length; j++) {
+        //     if (costumer[j] != null) {
+        //         System.out.println(costumer[j]);
+        //     }
+        // }
+        // System.out.println();
 }
 // static Settlement settlement[] = new Settlement[20];
 public static Settlement buatSettlement() {
