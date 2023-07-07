@@ -23,15 +23,24 @@ public class Order {
     // int harga;
     // int jumlah;
 
-    String orderID;
-    String customerName; //ni ambil dari Customer.java
-    String customerPhoneNumber; //ni ambil dari Customer.java
-    String tanggalPesanan; 
-    int hargaTotal; 
-    String karyawan; 
+    private String orderID;
+    private String customerName; //ni ambil dari Customer.java
+    private String customerPhoneNumber; //ni ambil dari Customer.java
+    private String tanggalPesanan; 
+    private int hargaTotal; 
+    private String karyawan; 
 
 
     public Order() {
+    }
+
+    public Order(String orderID, String customerName, String customerPhoneNumber, String tanggalPesanan, String karyawan){
+        this.orderID = orderID;
+        this.customerName = customerName;
+        this.customerPhoneNumber = customerPhoneNumber;
+        this.tanggalPesanan = tanggalPesanan;
+        this.karyawan = karyawan;
+        
     }
 
     public Order(String orderID, String customerName, String customerPhoneNumber, String tanggalPesanan, int hargaTotal, String karyawan) {

@@ -20,17 +20,24 @@ public class Costumer {
      String phoneNumber;
      String email;
      String address;
+     String CustomerID;
 
     public Costumer() {
     }
 
-    public Costumer(String name, String phoneNumber, String email, String address) {
+    public Costumer(String CustomerID, String name, String phoneNumber, String email, String address) {
+        this.CustomerID = CustomerID;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
     }
-
+    public void setCustomerID(String CustomerID){
+        this.CustomerID = CustomerID;
+    }
+    public String getCustomerID(){
+        return this.CustomerID;
+    }
     public String getName() {
         return this.name;
     }

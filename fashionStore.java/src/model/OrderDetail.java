@@ -5,6 +5,7 @@ import java.util.List;
 public class OrderDetail {
     private String orderID;
     private ArrayList<Produk> idProduk;
+    private ArrayList<Integer> quantityList;
     private int quantity;
     private int hargaSatuan;
     private int hargaTotal;
@@ -13,6 +14,7 @@ public class OrderDetail {
     public OrderDetail(String orderID, int quantity, int hargaSatuan){ //int hargaTotal, ArrayList<String> idProduk
         this.orderID = orderID;
         this.idProduk = new ArrayList<>();
+        this.quantityList = new ArrayList<>();
         this.quantity = quantity;
         this.hargaSatuan = hargaSatuan;
         this.hargaTotal = quantity * hargaSatuan;
@@ -20,9 +22,16 @@ public class OrderDetail {
     // public OrderDetail() {
     //     idProduk = new ArrayList<String>();
     //}
-
-    public OrderDetail() {
+    public OrderDetail(){
+        idProduk = new ArrayList<>();
+        quantityList = new ArrayList<>();
     }
+    public OrderDetail(String orderID){
+
+    }
+
+    // public OrderDetail() {
+    // }
 
     public String getOrderID() {
         return this.orderID;
@@ -34,6 +43,10 @@ public class OrderDetail {
 
     public ArrayList<Produk> getIdProduk() { //how
         return idProduk;
+    }
+
+    public ArrayList<Integer> getQuantityList(){
+        return quantityList;
     }
 
     // public void setIdProduk(ArrayList<String> idProduk) {
@@ -54,21 +67,41 @@ public class OrderDetail {
     }
 
     public void setHargaSatuan(int hargaSatuan) {
+
         this.hargaSatuan = hargaSatuan;
         this.hargaTotal = quantity * hargaSatuan;
     }
 
     public int getHargaTotal() {
-        return this.hargaTotal;
+        int hargaTotal = 0;
+        for (int i = 0; i < idProduk.size(); i++) {
+            Produk produk = idProduk.get(i);
+            int quantity = quantityList.get(i);
+            hargaTotal += produk.getHarga() * quantity;
+        }
+        return hargaTotal;
+        //return this.hargaTotal;
     }
 
     public void setHargaTotal(int hargaTotal) {
         this.hargaTotal = hargaTotal;
     }
 
-    public void addProduk(Produk produk) {
+    public void addProduk(Produk produk, int quantity) {
         idProduk.add(produk);
+        quantityList.add(quantity);
+
     }
+
+    // public int getHargaTotal() {
+    //     int hargaTotal = 0;
+    //     for (int i = 0; i < idProduk.size(); i++) {
+    //         Produk produk = idProduk.get(i);
+    //         int quantity = quantityList.get(i);
+    //         hargaTotal += produk.getHarga() * quantity;
+    //     }
+    //     return hargaTotal;
+    // }
 
 
     @Override
