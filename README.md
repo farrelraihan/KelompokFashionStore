@@ -8,7 +8,7 @@ Anggota :
 - Davin Lim 030812200 
 - Salim Ariantou 030812200
 
-## Program admin toko fashion
+## Program Admin Toko Fashion
 Program ini akan membantu admin dalam menginputkan dan mengakses data Customer, Karyawan, Produk, Settlement, Detail Order, dan Order.
 
 ## Fitur yang tersedia
