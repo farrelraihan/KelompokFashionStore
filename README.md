@@ -1,6 +1,6 @@
 ## KelompokFashionStore
  Ketua :
-- Owen 030812200
+- Owen 03081220045
 
 Anggota : 
 - Farrel Alifah Raihan 03081220042
