@@ -115,9 +115,9 @@ public static void init(){
            
 
 
-                Produk AdidasSepatu = new Produk("Adidas", "Ultraboost", "69BCA20", "Sepatu", 870000, 52, "White", "44");
-                Produk AdidasBaju = new Produk("Adidas", "Trefoil", "78BXI20", "Baju", 583000, 199, "White", "XXL");
-                Produk NikeSepatu = new Produk("Nike", "Dunk Low Retro", "XXA887A", "Sepatu", 1100000, 2, "White", "47");
+                // Produk AdidasSepatu = new Produk("Adidas", "Ultraboost", "69BCA20", "Sepatu", 870000, 52, "White", "44");
+                // Produk AdidasBaju = new Produk("Adidas", "Trefoil", "78BXI20", "Baju", 583000, 199, "White", "XXL");
+                // Produk NikeSepatu = new Produk("Nike", "Dunk Low Retro", "XXA887A", "Sepatu", 1100000, 2, "White", "47");
                 // Costumer Salim = new Costumer("Salim", "082160548923", "salim.ariantou@gmail.com", "Jl. Brahrang");
                 // Costumer Justin = new Costumer("Justin", "082134517682", "Justin.lo@gmail.com", "Jl. Ahmad Yani");
                 // Costumer Farrel = new Costumer("Farrel", "082188653391", "farrel21@gmail.com", "Jl. Setia Budi");
@@ -126,13 +126,13 @@ public static void init(){
                 // Settlement trx2 = new Settlement("FS02","QRIS","05062023","0224","Sukses");
                 // Settlement trx3 = new Settlement("FS03","Debit","05052023","1130","Gagal");
 
-                karyawan Puan = new karyawan("03081220031", "Puan", "Manajer", "Pemasaran", 4500000, "081260789229");
-                karyawan Toni = new karyawan("03081220032", "Toni", "Desainer Fashion", "Design", 7500000, "081360789443");
-                karyawan Dandy = new karyawan("03081220033", "Dandy", "Manajer", "Produksi", 8500000, "081260989119");
+                // karyawan Puan = new karyawan("03081220031", "Puan", "Manajer", "Pemasaran", 4500000, "081260789229");
+                // karyawan Toni = new karyawan("03081220032", "Toni", "Desainer Fashion", "Design", 7500000, "081360789443");
+                // karyawan Dandy = new karyawan("03081220033", "Dandy", "Manajer", "Produksi", 8500000, "081260989119");
 
             }
 
-public static void addCustomer() {
+public static void addCustomer() { //Menambahkan data customer ke dalam customerList
         Scanner scanner = new Scanner(System.in);
 
         try{
@@ -153,7 +153,7 @@ public static void addCustomer() {
         System.out.println("Error occurred while adding customer: " + e.getMessage());
     }
 }
-    public static void viewCustomer() {
+    public static void viewCustomer() { //Cetak seluruh Customer yang ada pada customerList
         if (customerList.isEmpty()) {
             System.out.println("No Customer found.");
         } else {
@@ -172,7 +172,7 @@ public static void addCustomer() {
 
 
     public static void addOrder() { //try fix  original nothing inside
-    //Scanner scanner = new Scanner(System.in); //try fix
+    //Scanner scanner = new Scanner(System.in); //try fix  // Menambahkan Data Orderan, dengan mengassign Customer dan Karyawan untuk orderan yang dilakukan.
 
     LocalTime localTime = LocalTime.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -248,7 +248,7 @@ public static void addCustomer() {
    // scanner.close();
 }
 
-public static void viewOrder() {
+public static void viewOrder() { // Mencetak Order yang tersedia pada orderList
     if (orderList.isEmpty()) {
         System.out.println("No Order found.");
     } else {
@@ -269,10 +269,7 @@ public static void viewOrder() {
     }
 }
 
-
-
-
-    public static void addProduk() {
+    public static void addProduk() { //Menambahkan data produk
     Scanner scanner = new Scanner(System.in);
     
     try{
@@ -309,7 +306,7 @@ public static void viewOrder() {
     }
 }
 
-public static void viewProduk() {
+public static void viewProduk() { // Mencetak Seluruh Produk yang tersedia pada produkList
     if (produkList.isEmpty()) {
         System.out.println("No Produk found.");
     } else {
@@ -326,5 +323,260 @@ public static void viewProduk() {
         }
 
         System.out.println("--------------------------------------------------------");
+    }
+}
+
+public static void addKaryawan() { //Menambahkan data karyawan
+    Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Karyawan Name: ");
+        String namaKaryawan = scanner.nextLine();
+        System.out.print("Enter Karyawan Phone Number: ");
+        String nomorTeleponKaryawan = scanner.nextLine();
+        System.out.print("Enter Karyawan Jabatan: ");
+        String jabatan = scanner.nextLine();
+        System.out.print("Enter Karyawan Departemen: ");
+        String departemen = scanner.nextLine();
+        System.out.print("Enter Karyawan Gaji: ");
+        String gaji = scanner.nextLine();
+
+        // Generate the Karyawan ID based on the index of the ArrayList
+        int index = karyawanList.size() + 1;
+        String idKaryawan = "KR" + String.format("%03d", index); // Assuming a maximum of 999 karyawan
+
+        // Create a new Karyawan object and add it to the karyawanList ArrayList
+        Karyawan karyawan = new Karyawan(idKaryawan, namaKaryawan, nomorTeleponKaryawan, jabatan, departemen, gaji);
+        karyawan.setIdKaryawan(idKaryawan);
+        karyawanList.add(karyawan);
+        
+        System.out.println("Karyawan added successfully!");
+    }
+
+    public static void viewKaryawan() { //Cetak seluruh daftar karyawan yang tersedia pada karyawanList
+        if (karyawanList.isEmpty()) {
+            System.out.println("No karyawan found.");
+        } else {
+            System.out.println("Karyawan List:");
+        System.out.println("--------------------------------------------------------");
+        System.out.println("Available Karyawan:");
+        System.out.println("--------------------------------------------------------");
+        System.out.printf("| %-5s | %-20s | %-15s | %-10s |\n", "ID", "Nama", "Jabatan", "Departemen");
+
+        for (int i = 0; i < karyawanList.size(); i++) {
+            Karyawan karyawan = karyawanList.get(i);
+            System.out.printf("| %-5s | %-20s | %-15s | %-10s |\n", karyawan.getIdKaryawan(), karyawan.getNamaKaryawan(), karyawan.getJabatan(), karyawan.getDepartemen());
+        }
+
+        System.out.println("--------------------------------------------------------");
+    }
+        
+    }
+    public static void addDetailOrder() { //Menambahkan Detail Order
+    viewOrder();
+
+     System.out.print("Enter the Order ID: "); 
+    String orderID = scanner.nextLine();
+    viewProduk();
+    // mencari OrderID yang diinput apakah tersedia di orderList
+    Order selectedOrder = null;
+    for (Order order : orderList) {
+        if (order.getOrderID().equals(orderID)) {
+            selectedOrder = order;
+            break;
+        }
+    }
+
+    if (selectedOrder != null) {
+        // Prompt for detail order information
+
+        System.out.print("Enter the product ID: ");
+        String productID = scanner.nextLine();
+        System.out.print("Enter the quantity: ");
+        int quantity = scanner.nextInt();
+
+        // Retrieve the product information from the produkList based on the ID
+        Produk selectedProduk = null;
+        for (Produk produk : produkList) {
+            if (produk.getIdProduk().equals(productID)) {
+                selectedProduk = produk;
+                break;
+            }
+        }
+
+        if (selectedProduk != null) {
+            // Calculate the total price for the detail order
+            int hargaSatuan = selectedProduk.getHargaProduk();
+            int hargaTotal = hargaSatuan * quantity;
+
+            // Create a new DetailOrder object
+            DetailOrder detailOrder = new DetailOrder(orderID, productID, quantity, hargaSatuan, hargaTotal);
+
+            // Add the detail order to the order's detail order list
+            selectedOrder.getDetailOrderList().add(detailOrder);
+
+            System.out.println("Detail order added successfully!");
+        } else {
+            System.out.println("Invalid product ID.");
+        }
+    } else {
+        System.out.println("Invalid Order ID. Order not found.");
+    }
+}
+public static void viewDetailOrder() { //Fungsi untuk mengeprint Detail Order
+    viewOrder();
+
+    System.out.print("Enter the Order ID: ");
+    String orderID = scanner.nextLine();
+
+    // Find the order in the orderList based on the ID
+    Order selectedOrder = null;
+    for (Order order : orderList) {
+        if (order.getOrderID().equalsIgnoreCase(orderID)) {
+            selectedOrder = order;
+            break;
+        }
+    }
+
+    if (selectedOrder != null) {
+        List<DetailOrder> detailOrderList = selectedOrder.getDetailOrderList();
+
+        if (detailOrderList.isEmpty()) {
+            System.out.println("No detail orders found for the given Order ID.");
+        } else {
+            System.out.println("--------------------------------------------------------");
+            System.out.println("Detail Orders:");
+            System.out.println("--------------------------------------------------------");
+            System.out.printf("| %-8s | %-10s | %-8s | %-12s | %-10s |\n",
+                    "Order ID", "Product ID", "Quantity", "Unit Price", "Total Price");
+
+            for (DetailOrder detailOrder : detailOrderList) {
+                System.out.printf("| %-8s | %-10s | %-8d | %-12d | %-10d |\n",
+                        detailOrder.getOrderID(), detailOrder.getIdProduk(),
+                        detailOrder.getQuantity(), detailOrder.getHargaSatuan(),
+                        detailOrder.getHargaTotal());
+            }
+
+            System.out.println("--------------------------------------------------------");
+        }
+    } else {
+        System.out.println("Invalid Order ID. Order not found.");
+    }
+}
+
+public static Customer findCustomerByNameAndPhoneNumber(String name, String phoneNumber) {
+        for (Customer customer : customerList) {
+            if (customer.getCustomerName().equals(name) && customer.getCustomerPhoneNumber().equals(phoneNumber)) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
+public static Produk findProductByName(String name) {
+        for (Produk product : produkList) {
+            if (product.getProductName().equals(name)) {
+                return product;
+            }
+        }
+        return null;
+    }
+ public static Order findOrderByID(String orderID) {
+        for (Order order : orderList) {
+            if (order.getOrderID().equals(orderID)) {
+                return order;
+            }
+        }
+        return null;
+    }
+public static String generateOrderID() {
+        int nextOrderNumber = orderList.size() + 1;
+        return "ORD-" + String.format("%04d", nextOrderNumber);
+    }
+
+public static void addSettlement() { //Menambahkan data Settlement
+    viewOrder();
+
+    System.out.print("Enter the Order ID: ");  
+    String orderID = scanner.nextLine();
+
+        // Find the order in the orderList based on the ID
+        Order selectedOrder = null;
+        for (Order order : orderList) {
+            if (order.getOrderID().equals(orderID)) {
+                selectedOrder = order;
+                break;
+            }
+        }
+
+        if (selectedOrder != null) {
+            System.out.print("Enter the Settlement Status (Pending/Completed): ");
+            String status = scanner.nextLine();
+
+            // Validate the status
+            if (status.equalsIgnoreCase("Pending") || status.equalsIgnoreCase("Completed")) {
+                System.out.print("Enter the Settlement Method: ");
+                String method = scanner.nextLine();
+
+                Settlement settlement = new Settlement(orderID, status, method);
+                settlementList.add(settlement);
+                // Perform any necessary operations with the settlement object, such as adding it to a list or saving it to a database
+
+                System.out.println("Settlement added successfully!");
+            } else {
+                System.out.println("Invalid status! The status should be either 'Pending' or 'Completed'.");
+            }
+        } else {
+            System.out.println("Order not found!");
+        }
+    }
+
+    public static void viewSettlement(){ //Fungsi untuk melihat data Settlement yang telah ada. 
+        //viewDetailOrder();
+        if (settlementList.isEmpty()) { //INI CODE BUAT BISA PILIH MAU INDEX YANG MANA DI PRINT
+        System.out.println("No Settlement found.");
+    } else {
+        System.out.println("--------------------------------------------------------");
+        System.out.println("Settlements:");
+        System.out.println("--------------------------------------------------------");
+
+        for (int i = 0; i < settlementList.size(); i++) {
+            Settlement settlement = settlementList.get(i);
+            System.out.println((i + 1) + ". Order ID: " + settlement.getOrderID()); //Mengeprint Index dan Order ID nya.
+        }
+
+        System.out.println("--------------------------------------------------------"); //Memilih Index keberapa yang ingin di view
+        System.out.print("Enter the Index of the settlement to view: ");
+        int settlementNumber = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character
+
+        if (settlementNumber >= 1 && settlementNumber <= settlementList.size()) {
+            Settlement settlement = settlementList.get(settlementNumber - 1);
+            System.out.println("--------------------------------------------------------");
+            System.out.println("Settlement Details:");
+            System.out.println("--------------------------------------------------------");
+            System.out.println("Order ID: " + settlement.getOrderID());
+            System.out.println("Settlement Status: " + settlement.getStatus());
+            System.out.println("Settlement Method: " + settlement.getMetode());
+            System.out.println("----------------------------------------");
+        } else {
+            System.out.println("Invalid settlement number.");
+        }
+    }
+
+//         if (settlementList.isEmpty()){ //INI BUAT AUTO PRINT ALL SETTLEMENTS TANPA PILIH
+//             System.out.println("No settlements found!");
+//         } else {
+//             System.out.println("--------------------------------------------------------");
+//             System.out.println("Settlements:");
+//             System.out.println("--------------------------------------------------------");
+        
+//             for (Settlement settlement : settlementList) {
+//                 System.out.println("Order ID: " + settlement.getOrderID());
+//                 System.out.println("Settlement Status: " + settlement.getStatus());
+//                 System.out.println("Settlement Method: "+ settlement.getMetode());
+//               //System.out.println("Total Settlement: " + DetailOrder.getHargaTotal());
+//                 System.out.println("----------------------------------------");
+//     }
+// }
     }
 }
