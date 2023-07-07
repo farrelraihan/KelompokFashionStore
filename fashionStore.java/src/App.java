@@ -8,6 +8,7 @@ import model.OrderDetail;
 import model.Costumer;
 import model.Settlement;
 
+
 public class App {
     static List<Produk> produkList = new ArrayList<>();
     static List<Order> orderList = new ArrayList<>();
@@ -97,9 +98,9 @@ public class App {
                 Produk AdidasSepatu = new Produk("Adidas", "Ultraboost", "69BCA20", "Sepatu", 870000, 52, "White", "44");
                 Produk AdidasBaju = new Produk("Adidas", "Trefoil", "78BXI20", "Baju", 583000, 199, "White", "XXL");
                 Produk NikeSepatu = new Produk("Nike", "Dunk Low Retro", "XXA887A", "Sepatu", 1100000, 2, "White", "47");
-                Costumer Salim = new Costumer("Salim", "082160548923", "salim.ariantou@gmail.com", "Jl. Brahrang");
-                Costumer Justin = new Costumer("Justin", "082134517682", "Justin.lo@gmail.com", "Jl. Ahmad Yani");
-                Costumer Farrel = new Costumer("Farrel", "082188653391", "farrel21@gmail.com", "Jl. Setia Budi");
+                // Costumer Salim = new Costumer("Salim", "082160548923", "salim.ariantou@gmail.com", "Jl. Brahrang");
+                // Costumer Justin = new Costumer("Justin", "082134517682", "Justin.lo@gmail.com", "Jl. Ahmad Yani");
+                // Costumer Farrel = new Costumer("Farrel", "082188653391", "farrel21@gmail.com", "Jl. Setia Budi");
 
                 // Settlement trx1 = new Settlement("FS01","BCA","05062023","0123","Sukses");
                 // Settlement trx2 = new Settlement("FS02","QRIS","05062023","0224","Sukses");
@@ -111,8 +112,33 @@ public class App {
 
             }
             // disuruh ubah sistem inputan jadi gunakan array list. refer ke
-            // https://chat.openai.com/share/f137db60-fb36-43d8-9847-2d50648cb2f9
-           
+            // https://chat.openai.com/share/f137db60-fb36-43d8-9847-2d50648cb2f9\
+
+            public static Produk findProdukById(String idProduk) {
+        for (Produk produk : produkList) {
+            if (produk.getIdProduk().equals(idProduk)) {
+                return produk;
+            }
+        }
+        return null;
+    }
+            public static Costumer findCustomerById(String customerID) {
+        for (Costumer customer : costumerList) {
+            if (customer.getCustomerID().equals(customerID)) {
+                return customer;
+            }
+        }
+        return null;
+    }
+        public static Order findOrderById(String orderID) { //wait
+        for (Order order : orderList) {
+            if (order.getOrderID().equals(orderID)) {
+                return order;
+            }
+        }
+
+        return null;
+    }
             public static Produk buatProduk() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter product Brand: ");
@@ -216,9 +242,9 @@ public static Order buatOrder() {
         String customerPhoneNumber = scanner.nextLine();
         System.out.print("Masukkan Tanggal Pesanan: ");
         String tanggalPesanan = scanner.nextLine();
-        System.out.print("Masukkan Tanggal Pesanan: ");
-        int hargaTotal = scanner.nextInt();
-        scanner.nextLine(); // consume the newline character
+        // System.out.print("Masukkan Tanggal Pesanan: ");
+        // int hargaTotal = scanner.nextInt();
+        // scanner.nextLine(); // consume the newline character
         System.out.print("Masukkan Karyawan: ");
         String karyawan = scanner.next();
         scanner.nextLine();
@@ -226,12 +252,35 @@ public static Order buatOrder() {
         // int harga = scanner.nextInt();
         // System.out.print("Masukkan Jumlah: ");
         // int jumlah = scanner.nextInt();
-        
-        Order newOrder = new Order(orderID, customerName, customerPhoneNumber, tanggalPesanan, hargaTotal, karyawan);
-        orderList.add(newOrder);
 
+        OrderDetail orderDetail = new OrderDetail();
+        Produk produk;
+        String produkId;
+        int quantity;
+
+        do {
+            System.out.print("Enter product ID (or 'done' to finish): ");
+            produkId = scanner.nextLine();
+            if (!produkId.equalsIgnoreCase("done")) {
+                produk = findProdukById(produkId);
+                if (produk != null) {
+                    System.out.print("Enter quantity: ");
+                    quantity = scanner.nextInt();
+                    scanner.nextLine(); // Consume the newline character
+                    
+                    orderDetail.addProduk(produk, quantity);
+
+                    // orderDetail.addProduk(produk, quantity);
+                } else {
+                    System.out.println("Product not found. Please try again.");
+                }
+            }
+        } while (!produkId.equalsIgnoreCase("done"));
+        
+        Order newOrder = new Order(orderID, customerName, customerPhoneNumber, tanggalPesanan, karyawan);
+        orderList.add(newOrder);
+        
         return newOrder;
-    
     // Find the first empty slot in the array and insert the new product
     // for (int i = 0; i < produk.length; i++) {
     //     if (order[i] == null) {
@@ -240,8 +289,15 @@ public static Order buatOrder() {
     //     }
     // }
     // return newOrder;
+
+    
 }
 public static void printOrder() {
+    OrderDetail orderDetail = new OrderDetail();
+
+    ArrayList<Produk> idProduk = orderDetail.getIdProduk();
+    ArrayList<Integer> quantityList = orderDetail.getQuantityList();
+
         for (int i = 0; i < orderList.size(); i++) {
     Order order = orderList.get(i);
     System.out.println("Order[" + (i + 1) + "]:");
@@ -249,7 +305,7 @@ public static void printOrder() {
     System.out.println("Nama Customer: " + order.getCustomerName());
     System.out.println("Nomor Telepon Customer: " + order.getCustomerPhoneNumber());
     System.out.println("Tanggal Pesanan: " + order.getTanggalPesanan());
-    System.out.println("Total Harga: " + order.getHargaTotal());
+    System.out.println("Total Harga: " + orderDetail.getHargaTotal());
     System.out.println("Karyawan: " + order.getKaryawan());
     // System.out.println("Warna: " + order.getWarna());
     // System.out.println("Ukuran: " + produk.getUkuran());
@@ -262,6 +318,8 @@ public static Costumer buatCostumer() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Masukkan nama: ");
         String name = scanner.nextLine();
+        System.out.print("Masukkan Customer ID: ");
+        String CustomerID = scanner.nextLine();
         System.out.print("Masukkan nomor telepon: ");
         String phoneNumber = scanner.nextLine();
         System.out.print("Masukkan email: ");
@@ -270,7 +328,7 @@ public static Costumer buatCostumer() {
         String address = scanner.nextLine();
         
 
-        Costumer newCostumer = new Costumer(name,phoneNumber,email,address);
+        Costumer newCostumer = new Costumer(CustomerID,name,phoneNumber,email,address);
         costumerList.add(newCostumer);
 
          return newCostumer;
