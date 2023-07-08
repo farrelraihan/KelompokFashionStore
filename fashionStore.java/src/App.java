@@ -417,8 +417,10 @@ public static void addKaryawan() { //Menambahkan data karyawan
                     // Add the detail order to the order's detail order list
                     
                     selectedOrder.getDetailOrderList().add(detailOrder);
-
-                    selectedOrder.setHargaTotal(selectedOrder.getHargaTotal() + hargaTotal);
+                    
+                    int orderTotal = selectedOrder.getHargaTotal() != null ? selectedOrder.getHargaTotal() : 0;
+                    selectedOrder.setHargaTotal(orderTotal + hargaTotal); //fix latest error emergency
+                   // selectedOrder.setHargaTotal(selectedOrder.getHargaTotal() + hargaTotal);
     
                     System.out.println("Detail order added successfully!");
     
